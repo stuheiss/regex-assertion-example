@@ -22,7 +22,7 @@ class CanMatchRegexTest extends TestCase
 
         // expect content: 'Hello and the winning number is <number>!' where number is >= 0 and <= 100
         // get the actual page content
-        $content = $response->baseResponse->original;
+        $content = $response->getContent();
         // assert a regex
         $this->assertRegExp('/^Hello .* winning number is \d+!$/', $content);
     }
